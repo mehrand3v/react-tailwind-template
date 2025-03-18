@@ -1,0 +1,13 @@
+// jsconfig.json (root directory)
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@pages/*": ["./src/pages/*"]
+      // Add more paths as needed
+    }
+  }
+}
