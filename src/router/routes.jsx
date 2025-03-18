@@ -2,10 +2,10 @@
 
 import { Navigate } from "react-router-dom";
 import RootLayout from "@components/layout/RootLayout";
-import Customers from "@pages/Customers";
-import Sales from "@pages/Sales";
-import NotFound from "@pages/NotFound";
-import ErrorPage from "@pages/ErrorPage";
+// import Customers from "@pages/Customers";
+// import Sales from "@pages/Sales";
+// import NotFound from "@pages/NotFound";
+// import ErrorPage from "@pages/ErrorPage";
 
 const PlaceholderPage = () => (
   <div className="p-6">
@@ -20,10 +20,10 @@ const routes = [
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <ErrorPage />, // ✅ Handles crashes, API failures, etc. error handling at the root level
+    errorElement: <PlaceholderPage />, // ✅ Handles crashes, API failures, etc. error handling at the root level
     children: [
-      { index: true, element: <Customers /> },
-      { path: "sales", element: <Sales /> },
+      { index: true, element: <PlaceholderPage /> },
+      { path: "sales", element: <PlaceholderPage /> },
       { path: "products", element: <PlaceholderPage /> },
       // { path: "/products/:id", element: <Product /> }, // for dynamic routing
       { path: "users", element: <PlaceholderPage /> },
@@ -33,7 +33,7 @@ const routes = [
       { path: "inventory", element: <PlaceholderPage /> },
       { path: "transactions", element: <PlaceholderPage /> },
       { path: "dashboard", element: <Navigate to="/" replace /> }, // Redirect
-      { path: "*", element: <NotFound /> }, // ✅ Handles 404 errors
+      { path: "*", element: <PlaceholderPage /> }, // ✅ Handles 404 errors
     ],
   },
 ];
@@ -42,6 +42,15 @@ const routes = [
 
 
 export default routes;
+
+// How to access dynamic parameters inside your component, Look example below.
+
+// import { useParams } from "react-router-dom";
+// function Product() {
+// }
+// const { id } = useParams(); // Access the dynamic route parameter 'id'
+// return <h1>Product ID: {id}</h1>;
+// export default Product;
 
 // How to access dynamic parameters inside your component, Look example below.
 
