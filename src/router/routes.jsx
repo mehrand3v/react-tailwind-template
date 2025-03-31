@@ -1,4 +1,4 @@
-//src/router/appRoutes.jsx
+//src/router/routes.jsx
 
 import { Navigate } from "react-router-dom";
 import RootLayout from "@components/layout/RootLayout";
